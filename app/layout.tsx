@@ -1,0 +1,66 @@
+import type { Metadata, Viewport } from 'next'
+import { DM_Sans, Libre_Baskerville } from 'next/font/google'
+import { Analytics } from '@vercel/analytics/next'
+import './globals.css'
+
+const dmSans = DM_Sans({ 
+  subsets: ["latin"],
+  variable: '--font-sans'
+});
+
+const libreBaskerville = Libre_Baskerville({ 
+  subsets: ["latin"],
+  weight: ['400', '700'],
+  variable: '--font-serif'
+});
+
+export const metadata: Metadata = {
+  title: 'Centro Veterinario Cania | Cuidamos de quienes forman tu familia',
+  description: 'Centro Veterinario Cania en Telde, Gran Canaria. Más de 12 años cuidando de tu mascota con amor y profesionalidad. Medicina preventiva, cirugía, diagnóstico por imagen y mucho más.',
+  keywords: ['veterinario', 'Telde', 'Gran Canaria', 'clínica veterinaria', 'mascotas', 'perros', 'gatos', 'medicina preventiva'],
+  authors: [{ name: 'Centro Veterinario Cania' }],
+  openGraph: {
+    title: 'Centro Veterinario Cania | Cuidamos de quienes forman tu familia',
+    description: 'Tu clínica veterinaria de confianza en Telde. Atención personalizada para tu mascota.',
+    type: 'website',
+    locale: 'es_ES',
+  },
+  icons: {
+    icon: [
+      {
+        url: '/icon-light-32x32.png',
+        media: '(prefers-color-scheme: light)',
+      },
+      {
+        url: '/icon-dark-32x32.png',
+        media: '(prefers-color-scheme: dark)',
+      },
+      {
+        url: '/icon.svg',
+        type: 'image/svg+xml',
+      },
+    ],
+    apple: '/apple-icon.png',
+  },
+}
+
+export const viewport: Viewport = {
+  themeColor: '#4a7c59',
+  width: 'device-width',
+  initialScale: 1,
+}
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode
+}>) {
+  return (
+    <html lang="es">
+      <body className={`${dmSans.variable} ${libreBaskerville.variable} font-sans antialiased`}>
+        {children}
+        <Analytics />
+      </body>
+    </html>
+  )
+}
