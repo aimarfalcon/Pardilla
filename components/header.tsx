@@ -37,14 +37,7 @@ export function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-3 group">
-            <div className={`w-11 h-11 rounded-full flex items-center justify-center transition-all duration-300 ${
-              scrolled ? "bg-primary" : "bg-card/90 backdrop-blur-sm"
-            }`}>
-              <span className={`font-serif font-bold text-xl transition-colors duration-300 ${
-                scrolled ? "text-primary-foreground" : "text-primary"
-              }`}>C</span>
-            </div>
+          <Link href="/" className="flex items-center group">
             <div className="flex flex-col">
               <span className={`font-serif font-bold text-lg leading-tight transition-colors duration-300 ${
                 scrolled ? "text-foreground" : "text-card"
