@@ -20,10 +20,7 @@ const veterinarios = [
     name: "Yanira Aleman",
     specialties: ["Medicina preventiva", "Planes de salud"],
   },
-  {
-    name: "Beatriz Mateo",
-    specialties: ["Medicina interna", "Urgencias", "Cirugia"],
-  },
+
   {
     name: "Carla Gutierrez",
     specialties: ["Medicina General", "Ecografia"],
@@ -186,7 +183,7 @@ export function Team() {
           isVisible ? "animate-fade-in-up animation-delay-500" : "opacity-0"
         }`}>
           <p className="text-muted-foreground leading-relaxed">
-            Nuestro equipo de <span className="text-foreground font-medium">7 veterinarias</span> y{" "}
+            Nuestro equipo de <span className="text-foreground font-medium">6 veterinarias</span> y{" "}
             <span className="text-foreground font-medium">6 profesionales de apoyo</span> trabajan 
             juntas como una familia, comprometidas con ofrecer el mejor cuidado a tu mascota.
           </p>
