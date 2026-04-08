@@ -2,6 +2,7 @@
 
 import Link from "next/link"
 import { useState, useEffect } from "react"
+import { usePathname } from "next/navigation"
 import { Menu, X, Phone } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
@@ -18,6 +19,8 @@ const navItems = [
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const pathname = usePathname()
+  const isHomePage = pathname === "/"
 
   useEffect(() => {
     const handleScroll = () => {
@@ -51,17 +54,21 @@ export function Header() {
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-8">
-            {navItems.map((item) => (
-              item.href.startsWith("#") ? (
-                <a
+            {navItems.map((item) => {
+              const href = item.href.startsWith("#") && !isHomePage 
+                ? `/${item.href}` 
+                : item.href
+              
+              return item.href.startsWith("#") ? (
+                <Link
                   key={item.href}
-                  href={item.href}
+                  href={href}
                   className={`text-sm font-medium transition-colors duration-300 hover:text-primary ${
                     scrolled ? "text-foreground" : "text-card/90 hover:text-card"
                   }`}
                 >
                   {item.label}
-                </a>
+                </Link>
               ) : (
                 <Link
                   key={item.href}
@@ -73,7 +80,7 @@ export function Header() {
                   {item.label}
                 </Link>
               )
-            ))}
+            })}
           </nav>
 
           {/* CTA */}
@@ -113,18 +120,22 @@ export function Header() {
           mobileMenuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
         }`}>
           <nav className="py-4 flex flex-col gap-4 border-t border-border/50">
-            {navItems.map((item) => (
-              item.href.startsWith("#") ? (
-                <a
+            {navItems.map((item) => {
+              const href = item.href.startsWith("#") && !isHomePage 
+                ? `/${item.href}` 
+                : item.href
+              
+              return item.href.startsWith("#") ? (
+                <Link
                   key={item.href}
-                  href={item.href}
+                  href={href}
                   className={`text-sm font-medium transition-colors ${
                     scrolled ? "text-foreground" : "text-card"
                   }`}
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   {item.label}
-                </a>
+                </Link>
               ) : (
                 <Link
                   key={item.href}
@@ -137,7 +148,7 @@ export function Header() {
                   {item.label}
                 </Link>
               )
-            ))}
+            })}
             <div className="flex flex-col gap-3 pt-2">
               <a href="tel:+34928701457" className={`flex items-center gap-2 text-sm ${
                 scrolled ? "text-muted-foreground" : "text-card/80"
