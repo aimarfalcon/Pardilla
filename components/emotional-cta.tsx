@@ -71,8 +71,8 @@ export function EmotionalCta() {
             className="group text-base px-8 py-6 shadow-xl shadow-primary/30"
             asChild
           >
-            <a href="https://cal.com/aimar-falcon-yhkxig" target="_blank" rel="noopener noreferrer">
-              Reservar Cita Ahora
+            <a href="tel:+34928701457">
+              Pedir Cita
               <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </a>
           </Button>

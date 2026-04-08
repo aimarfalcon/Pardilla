@@ -87,7 +87,7 @@ export function Header() {
               <span>928 70 14 57</span>
             </a>
             <Button size="sm" className="font-medium shadow-lg shadow-primary/20" asChild>
-              <a href="https://cal.com/aimar-falcon-yhkxig" target="_blank" rel="noopener noreferrer">
+              <a href="tel:+34928701457">
                 Pedir Cita
               </a>
             </Button>
@@ -145,7 +145,7 @@ export function Header() {
                 <span>928 70 14 57</span>
               </a>
               <Button size="sm" className="w-fit" asChild>
-                <a href="https://cal.com/aimar-falcon-yhkxig" target="_blank" rel="noopener noreferrer">
+                <a href="tel:+34928701457">
                   Pedir Cita
                 </a>
               </Button>
