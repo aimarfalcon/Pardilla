@@ -50,8 +50,8 @@ export function FinalCta() {
             className="group text-base px-8 py-6 bg-card text-foreground hover:bg-card/90 shadow-xl"
             asChild
           >
-            <a href="https://cal.com/aimar-falcon-yhkxig" target="_blank" rel="noopener noreferrer">
-              Pedir Cita Online
+            <a href="tel:+34928701457">
+              Pedir Cita
               <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </a>
           </Button>

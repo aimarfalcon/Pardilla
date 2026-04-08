@@ -12,6 +12,7 @@ const footerLinks = {
     { label: "Sobre Nosotros", href: "#equipo" },
     { label: "Nuestro Equipo", href: "#equipo" },
     { label: "Planes de Salud", href: "#planes" },
+    { label: "Blog", href: "/blog" },
     { label: "Contacto", href: "#contacto" },
   ],
   legal: [
