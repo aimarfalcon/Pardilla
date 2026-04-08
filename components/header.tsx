@@ -10,6 +10,7 @@ const navItems = [
   { label: "Servicios", href: "#servicios" },
   { label: "Planes de Salud", href: "#planes" },
   { label: "Equipo", href: "#equipo" },
+  { label: "Blog", href: "/blog" },
   { label: "Contacto", href: "#contacto" },
   { label: "Aviso Legal", href: "/aviso-legal" },
 ]
